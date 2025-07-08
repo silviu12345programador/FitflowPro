@@ -1,23 +1,23 @@
 import React from 'react';
 
-interface Column {
-  key: string;
+interface Column<T> {
+  key: keyof T;
   label: string;
 }
 
-interface TableProps {
-  columns: Column[];
-  data: Array<Record<string, any>>;
-  onRowClick?: (row: any) => void;
+interface TableProps<T> {
+  columns: Column<T>[];
+  data: T[];
+  onRowClick?: (row: T) => void;
   loading?: boolean;
 }
 
-const Table: React.FC<TableProps> = ({ 
-  columns, 
-  data, 
-  onRowClick, 
-  loading = false 
-}) => {
+const Table = <T extends { id: string | number }>({
+  columns,
+  data,
+  onRowClick,
+  loading = false,
+}: TableProps<T>) => {
   if (loading) {
     return (
       <div className="w-full p-4 text-center">
@@ -34,7 +34,7 @@ const Table: React.FC<TableProps> = ({
           <tr>
             {columns.map((column) => (
               <th
-                key={column.key}
+                key={column.key as string}
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 {column.label}
@@ -43,9 +43,9 @@ const Table: React.FC<TableProps> = ({
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {data.map((row, index) => (
+          {data.map((row) => (
             <tr
-              key={index}
+              key={row.id}
               onClick={() => onRowClick?.(row)}
               className={`${
                 onRowClick ? 'cursor-pointer hover:bg-gray-50' : ''
@@ -53,10 +53,10 @@ const Table: React.FC<TableProps> = ({
             >
               {columns.map((column) => (
                 <td
-                  key={column.key}
+                  key={column.key as string}
                   className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
                 >
-                  {row[column.key]}
+                  {row[column.key] as React.ReactNode}
                 </td>
               ))}
             </tr>
