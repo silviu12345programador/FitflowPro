@@ -29,5 +29,15 @@ export const libraryApi = {
   duplicateTemplate: async (id: string) => {
     // TODO: Implement API call
     return {};
+  },
+
+  saveWorkoutTemplate: async (templateData: any) => {
+    console.log('Saving workout template:', templateData);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Simulate success
+    return { success: true, data: templateData };
+    // Simulate error
+    // return { success: false, message: 'Failed to save template.' };
   }
 };
