@@ -33,7 +33,7 @@ const PrivateNotesSection: React.FC<PrivateNotesSectionProps> = ({ notes, onSave
           rows={4}
         />
         <div className="flex justify-end">
-          <Button text="Guardar Nota" onClick={handleSaveNote} variant="primary" />
+          <Button onClick={handleSaveNote} variant="primary">Guardar Nota</Button>
         </div>
       </div>
       <div className="space-y-2">

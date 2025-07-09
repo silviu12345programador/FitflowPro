@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
 
 interface ButtonProps {
-  text: string;
+  children: ReactNode;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'danger';
+  variant?: 'primary' | 'secondary' | 'danger' | 'accent';
   disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  className?: string;
+  style?: CSSProperties;
 }
 
 const Button: React.FC<ButtonProps> = ({ 
-  text, 
+  children, 
   onClick, 
   variant = 'primary', 
-  disabled = false 
+  disabled = false,
+  type = 'button',
+  className = '',
+  style = {}
 }) => {
   const getVariantClasses = () => {
     switch (variant) {
       case 'primary':
-        return 'bg-blue-600 hover:bg-blue-700 text-white';
+        return 'bg-primary hover:bg-primaryHover text-white';
       case 'secondary':
-        return 'bg-gray-600 hover:bg-gray-700 text-white';
+        return 'bg-secondary hover:bg-secondaryHover text-white';
       case 'danger':
-        return 'bg-red-600 hover:bg-red-700 text-white';
+        return 'bg-error hover:bg-errorDark text-white';
+      case 'accent':
+        return 'bg-accent hover:bg-accentHover text-white';
       default:
-        return 'bg-blue-600 hover:bg-blue-700 text-white';
+        return 'bg-primary hover:bg-primaryHover text-white';
     }
   };
 
@@ -30,11 +38,13 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       disabled={disabled}
+      type={type}
+      style={style}
       className={`px-4 py-2 rounded-lg font-medium transition-colors ${
         disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-      } ${getVariantClasses()}`}
+      } ${getVariantClasses()} ${className}`}
     >
-      {text}
+      {children}
     </button>
   );
 };

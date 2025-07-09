@@ -74,7 +74,7 @@ const LogProgressForm: React.FC<LogProgressFormProps> = ({ onLogProgress }) => {
         />
       </div>
       <div className="flex-shrink-0">
-        <Button type="submit" className="w-full md:w-auto" style={{ backgroundColor: '#F59E0B' }}>
+        <Button type="submit" className="w-full md:w-auto" variant="accent">
           Registrar
         </Button>
       </div>
