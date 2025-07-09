@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useCreadordePlanesdeEntrenamiento, WorkoutDay } from '../hooks/useCreadordePlanesdeEntrenamiento';
-import Button from '../../../../components/Button';
+import Button from '../../../components/Button';
 import { BarChartBig, ChevronsDown, ChevronsUp } from 'lucide-react';
 import { workoutDayEvents } from './workoutDayEvents';
 

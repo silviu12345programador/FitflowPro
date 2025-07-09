@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Button from '../../../components/Button';
-import TagInput from './TagInput';
+import { TagInput } from './TagInput';
 
 interface SaveAsTemplateModalProps {
   isOpen: boolean;

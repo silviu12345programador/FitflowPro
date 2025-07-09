@@ -4,12 +4,12 @@ import FoodSearchEngine from './components/FoodSearchEngine';
 import MacroSummaryHeader from './components/MacroSummaryHeader';
 import { useCreadordePlanesdeNutricion } from './hooks/useCreadordePlanesdeNutrición';
 import { AddCustomFoodModal } from './components/AddCustomFoodModal';
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 import { addCustomFood } from './api';
 import MealItemEditor from './components/MealItemEditor';
 import { PlanTargetSetter } from './components/PlanTargetSetter';
 import { PlanActionsToolbar } from './components/PlanActionsToolbar';
-import PlanSummaryView from './components/PlanSummaryView';
+// import PlanSummaryView from './components/PlanSummaryView';
 
 const CreadordePlanesdeNutriciónPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -107,7 +107,7 @@ const CreadordePlanesdeNutriciónPage: React.FC = () => {
         onClose={() => setIsModalOpen(false)}
         onSave={handleSaveCustomFood}
       />
-      {isSummaryOpen && <PlanSummaryView onClose={() => setIsSummaryOpen(false)} />}
+      {/* {isSummaryOpen && <PlanSummaryView onClose={() => setIsSummaryOpen(false)} />} */}
     </div>
   );
 };

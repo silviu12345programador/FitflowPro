@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getProgressHistory } from '../api';
-import { billingApi } from '../../gestin-de-pagos/api';
+import { getPaymentsByClientId } from '../../gestin-de-pagos/api';
 import { ProgressData } from '../components/ProgressMetricsChart';
 
 interface Payment {
@@ -23,7 +23,7 @@ export const usePerfildelCliente = (clientId: string) => {
         setIsLoading(true);
         const [progress, paymentHistory] = await Promise.all([
           getProgressHistory(clientId),
-          billingApi.getPaymentsByClientId(clientId),
+          getPaymentsByClientId(clientId),
         ]);
         
         setProgressData(progress);

@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { libraryApi } from '../../../biblioteca-de-plantillas/api';
-import Button from '../../../../components/Button';
-import TagInput from './TagInput';
+import { libraryApi } from '../../biblioteca-de-plantillas/api';
+import Button from '../../../components/Button';
+import { TagInput } from './TagInput';
 
 // Define a mock template structure based on the hook's data structures
 export interface ExerciseTemplate {

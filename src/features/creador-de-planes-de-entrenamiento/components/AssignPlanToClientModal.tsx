@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { clientsApi } from '@/features/gestin-de-clientes-crm/api';
-import ClientSearchBar from '@/features/gestin-de-clientes-crm/components/ClientSearchBar';
+import { clientsApi } from '../../gestin-de-clientes-crm/api';
+import ClientSearchBar from '../../gestin-de-clientes-crm/components/ClientSearchBar';
 import { workoutBuilderApi } from '../api';
 
 interface Client {

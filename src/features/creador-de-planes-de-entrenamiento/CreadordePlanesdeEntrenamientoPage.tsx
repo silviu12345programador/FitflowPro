@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PlanMetadataHeader from './components/PlanMetadataHeader';
 import { useCreadordePlanesdeEntrenamiento } from './hooks/useCreadordePlanesdeEntrenamiento';
 import WorkoutDayContainer from './components/WorkoutDayContainer';
-import Button from '../../../components/Button';
+import Button from '../../components/Button';
 import { SaveAsTemplateModal } from './components/SaveAsTemplateModal';
-import { libraryApi } from '../../biblioteca-de-plantillas/api';
+import { saveWorkoutTemplate } from '../biblioteca-de-plantillas/api';
 import AssignPlanToClientModal from './components/AssignPlanToClientModal';
 import PlanPreviewModal from './components/PlanPreviewModal';
 import ImportFromTemplateModal from './components/ImportFromTemplateModal';
@@ -65,7 +65,7 @@ const CreadordePlanesdeEntrenamientoPage: React.FC = () => {
     };
 
     try {
-      const result = await libraryApi.saveWorkoutTemplate(templateData);
+      const result = await saveWorkoutTemplate(templateData);
       if (result.success) {
         alert('Plantilla guardada con éxito');
         setIsTemplateModalOpen(false);

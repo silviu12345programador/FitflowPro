@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../../components/Button';
+import Button from '../../../components/Button';
 
 interface PlanActionsToolbarProps {
   onSave: () => void;

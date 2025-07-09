@@ -23,7 +23,7 @@ const ProgressiveOverloadModal: React.FC<ProgressiveOverloadModalProps> = ({
   const [value, setValue] = React.useState(2.5);
   const [frequency, setFrequency] = React.useState<'weekly' | 'biweekly'>('weekly');
 
-  const handleSave = (). => {
+  const handleSave = () => {
     onSave({ type, value, frequency });
     onClose();
   };

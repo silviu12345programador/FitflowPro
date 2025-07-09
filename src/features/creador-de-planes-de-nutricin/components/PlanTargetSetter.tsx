@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Button } from 'src/components/Button';
+import Button from '../../../components/Button';
 
 interface PlanTargetSetterProps {
   targets: {
@@ -50,7 +50,7 @@ export const PlanTargetSetter: React.FC<PlanTargetSetterProps> = ({ targets, onT
     setCalories(isNaN(newCalories) ? 0 : newCalories);
   };
 
-  const handleMacroChange = (setter: React.Dispatch<React.SetStateAction<number>>) => (e: React.ChangeEvent<HTMLInputElement>) => {.
+  const handleMacroChange = (setter: React.Dispatch<React.SetStateAction<number>>) => (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
     setter(isNaN(value) ? 0 : value);
   };

@@ -119,3 +119,12 @@ export const sendReminder = (transactionId: string): Promise<{ success: boolean 
     }, 500);
   });
 };
+
+export const getPaymentsByClientId = async (clientId: string) => {
+    console.log(`API: Obteniendo pagos para el cliente ${clientId}`);
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve([]);
+        }, 500);
+    });
+};

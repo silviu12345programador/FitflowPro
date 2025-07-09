@@ -1,7 +1,7 @@
 
 import React from 'react';
-import Table from '../../../../components/Table';
-import Button from '../../../../components/Button';
+import Table from '../../../components/Table';
+import Button from '../../../components/Button';
 
 interface Payment {
   id: string;

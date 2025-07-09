@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from '../../../components/Table';
+import Table from '../../../components/Table';
 import { Transaction } from '../api';
 import { GetTransactionsParams } from '../api';
 
